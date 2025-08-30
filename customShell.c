@@ -81,8 +81,6 @@ void argumentExecution(char **args) { // Basically an array of strings {
   shellLaunch(args); //Fork, Execute, Wait. 
 }
 
-// Figure out what is going on,
-// WHat is **char 
 char **tokeniseLine(char *line){
   char **tokens; // An array of tokens, simmilar to [av]
   tokens = malloc(BUFSIZ * sizeof(*tokens));
@@ -142,14 +140,12 @@ char *getShellLine(void){
          } 
     }
        
-  return buffer; /* *buffer --> Value stord at Address
-                     buffer --> A memory address (location) for the buffer varaible     */
+  return buffer; 
  }
 
 
 
 int main(int ac, char **av) {
-  // Read "Crafting Interpreters" !!! 
   char *shellLine; // Pointer to location where user input is stored.
   char **arguments; 
   while (shellLine = getShellLine()) { //Keep reading until user inputs a line
